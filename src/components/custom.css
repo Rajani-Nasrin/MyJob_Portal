@@ -1,0 +1,51 @@
+
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 300%;
+  }
+
+}
+
+.swiper-pagination-bullet {
+
+  background: #bdbdbd !important;
+
+  opacity: 1 !important;
+  cursor: pointer;
+
+}
+
+.swiper-pagination-bullet-active {
+
+  background: linear-gradient(
+    90deg,
+    rgb(56, 167, 69) 0%,
+    rgb(76, 206, 91) 63%
+  ) !important;
+
+  width: 25px;
+
+  border-radius: 20px;
+
+ 
+
+  transition: all 0.4s ease;
+
+}
+
+.swiper {
+
+  padding-bottom: 50px !important;
+
+}
+
+.swiper-pagination {
+
+  bottom: 0px !important;
+
+}

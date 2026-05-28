@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "username": "test",
+      "password": "123",
+      "id": "CjTKABe6KFU"
+    },
+    {
+      "username": "admin",
+      "password": "admin123",
+      "id": "neJKyRhqN1Q"
+    },
+    {
+      "username": "rajani",
+      "password": "rajani",
+      "id": "6c1yfoBS4dw"
+    },
+    {
+      "username": "abc",
+      "password": "abc",
+      "id": "oLjKt3IFCtQ"
+    }
+  ],
+  "applications": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

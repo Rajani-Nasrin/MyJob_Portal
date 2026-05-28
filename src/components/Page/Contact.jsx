@@ -10,36 +10,44 @@ function Contact() {
 
       <main className="pt-28 overflow-hidden">
         {/* HERO SECTION */}
+
         <section
           className="relative
-          bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)]
-          py-12"
+  bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)]
+  py-12 overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div
+              className="relative
+      grid lg:grid-cols-2
+      gap-16 items-center"
+            >
               {/* LEFT */}
-              <div>
+              <div className="relative z-10">
                 <span
                   className="inline-block
-                  bg-white/15
-                  text-white
-                  px-6 py-2
-                  rounded-full
-                  text-sm font-medium"
+          bg-white/15
+          text-white
+          px-6 py-2
+          rounded-full
+          text-sm font-medium"
                 >
                   GET IN TOUCH
                 </span>
 
                 <h1
-                  className="text-6xl font-black
-                  text-white mt-4 leading-tight"
+                  className="text-4xl md:text-6xl
+          font-black
+          text-white mt-4
+          leading-tight"
                 >
                   Contact Us
                 </h1>
 
                 <p
                   className="text-white/90
-                  text-lg leading-7 mt-4 max-w-2xl"
+          text-base md:text-lg
+          leading-7 mt-4 max-w-2xl"
                 >
                   We'd love to hear from you! Whether you have a question,
                   feedback, or need assistance, our team is here to help.
@@ -48,9 +56,11 @@ function Contact() {
                 {/* BREADCRUMB */}
                 <div
                   className="mt-8
-                  flex items-center gap-4
-                  bg-white w-fit
-                  px-8 py-4 rounded-full"
+          flex items-center gap-4
+          bg-white w-fit
+          px-6 md:px-8
+          py-3 md:py-4
+          rounded-full"
                 >
                   <Link to="/" className="text-[#38A745] font-semibold">
                     Home
@@ -63,32 +73,43 @@ function Contact() {
               </div>
 
               {/* RIGHT */}
-              <div className="relative flex justify-center">
+              <div
+                className="absolute lg:relative
+        right-[-60px]
+        top-0 md:top-auto
+        md:right-0
+        opacity-20 lg:opacity-100
+        flex justify-center"
+              >
                 <div
-                  className="w-[500px] h-[350px]
-                  bg-white/10
-                  rounded-[40px]
-                  backdrop-blur-md
-                  flex items-center justify-center"
+                  className="w-[250px] md:w-[500px]
+          h-[250px] md:h-[350px]
+          bg-white/10
+          rounded-[40px]
+          backdrop-blur-md
+          flex items-center justify-center"
                 >
                   <i
                     className="fa-solid fa-envelope-open-text
-                    text-white text-[180px]"
+            text-white
+            text-[100px] md:text-[180px]"
                   ></i>
                 </div>
 
                 <div
                   className="absolute
-                  top-10 -left-10
-                  w-24 h-24 rounded-full
-                  bg-white/20"
+          top-10 -left-2 md:-left-10
+          w-16 h-16 md:w-24 md:h-24
+          rounded-full
+          bg-white/20"
                 ></div>
 
                 <div
                   className="absolute
-                  bottom-0 -right-10
-                  w-32 h-32 rounded-full
-                  bg-white/10"
+          bottom-0 -right-2 md:-right-10
+          w-20 h-20 md:w-32 md:h-32
+          rounded-full
+          bg-white/10"
                 ></div>
               </div>
             </div>
@@ -96,7 +117,7 @@ function Contact() {
         </section>
 
         {/* CONTACT INFO */}
-        <section className="py-12 bg-white">
+        <section className="py-8 md:py-12 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div
               className="grid
@@ -151,28 +172,28 @@ function Contact() {
           border border-gray-100
           shadow-lg
           rounded-2xl
-          p-6
+          md:p-6 p-4
           text-center
           hover:-translate-y-2
           transition duration-500"
                 >
                   {/* ICON */}
                   <div
-                    className="w-20 h-20
+                    className="md:w-20 md:h-20 w-14 h-14
             mx-auto rounded-full
             bg-[#4CCE5B]/10
             flex items-center justify-center"
                   >
                     <i
                       className={`fa-solid ${item.icon}
-              text-[#38A745] text-3xl`}
+              text-[#38A745] text-2xl md:text-3xl`}
                     ></i>
                   </div>
 
                   {/* TITLE */}
                   <h2
                     className="text-2xl font-bold
-            text-gray-900 mt-8"
+            text-gray-900 mt-4 md:mt-8"
                   >
                     {item.title}
                   </h2>
@@ -193,7 +214,7 @@ function Contact() {
                       <a
                         href={`tel:${item.text2}`}
                         className="block
-                text-gray-600 text-lg mt-2
+                text-gray-600 text-lg  mt-4 md:mt-2
                 hover:text-[#38A745]
                 transition duration-300"
                       >
@@ -206,7 +227,7 @@ function Contact() {
                       <a
                         href={`mailto:${item.text1}`}
                         className="block
-                text-gray-600 text-lg mt-6
+                text-gray-600 text-lg  mt-4 md:mt-6
                 hover:text-[#38A745]
                 transition duration-300"
                       >
@@ -255,18 +276,18 @@ function Contact() {
         </section>
 
         {/* FORM + MAP */}
-        <section className="pb-24 bg-white">
+        <section className="pb-6 md:pb-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-10">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-10">
               {/* FORM */}
               <div
                 className="bg-[#f8fff9]
                 rounded-[35px]
-                p-12 shadow-lg"
+                p-4 md:p-12 shadow-lg"
               >
                 <h2
-                  className="text-4xl font-bold
-                  text-gray-900"
+                  className="text-3xl md:text-4xl  font-bold
+                  text-gray-900 text-center md:text-left"
                 >
                   Send Us a Message
                 </h2>
@@ -286,7 +307,7 @@ function Contact() {
                 </p>
 
                 {/* FORM */}
-                <form className="mt-10 space-y-6">
+                <form className=" mt-6 md:mt-10  space-y-4 md:space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="relative">
                       <i
@@ -378,7 +399,7 @@ function Contact() {
                      bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)] text-white
                     text-lg font-semibold
                     px-8 py-4
-                    group cursor-pointer"
+                    group cursor-pointer w-full md:w-auto inline-block text-center justify-center items-center"
                   >
                     {/* HOVER BG */}
                     <span
@@ -389,7 +410,7 @@ function Contact() {
                     ></span>
 
                     {/* TEXT */}
-                    <span className="relative z-10 flex items-center gap-3">
+                    <span className="relative z-10 flex items-center gap-3 text-center justify-center ">
                       Send Message
                       <i className="fa-solid fa-paper-plane"></i>
                     </span>
@@ -402,7 +423,7 @@ function Contact() {
                 className="rounded-[35px]
                 overflow-hidden
                 shadow-lg
-                h-full min-h-[750px]"
+                h-[250px] md:h-full "
               >
                 {/* <iframe
                   title="map"
@@ -423,16 +444,13 @@ function Contact() {
           </div>
         </section>
 
-     
         {/* FAQ */}
-        <section className="pb-24 bg-white">
+        <section className="pb-6 md:pb-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             {/* HEADING */}
             <div className="text-center">
-             
-
               <h2
-                className="text-4xl font-black
+                className="text-3xl md:text-4xl font-black
         text-gray-900 mt-6"
               >
                 Frequently Asked Questions

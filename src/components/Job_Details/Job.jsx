@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Page/Navbar";
+import Footer from "../Page/Footer";
 import jobs from "../Page/data/jobsData";
 // import { useNavigate } from "react-router-dom";
 // import Navbar from "../Page/Navbar";
@@ -154,6 +155,13 @@ navigate ((`${id}`))
       <main className="mt-20">
         <section className="bg-slate-100">
           <div className="container mx-auto px-4 py-12 ">
+            {/* HEADING */}
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
+                Find Your Dream Job
+              </h2>
+            </div>
+
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
               {jobs.map((item) => {
                 const {
@@ -230,12 +238,12 @@ navigate ((`${id}`))
                   //   </div>
                   <div
                     key={id}
-                    className="bg-white border border-gray-300 p-6
+                    className="bg-white border border-gray-300  p-4 md:p-6
             flex flex-col md:flex-row md:items-center justify-between
             gap-4 hover:shadow-xl transition duration-300"
                   >
                     {/* LEFT */}
-                    <div className="flex items-center gap-6">
+                    <div className="flex flex-col md:flex-row items-center gap-6">
                       {/* IMAGE */}
                       <div
                         className="w-24 h-24 rounded-full border-4 border-gray-100
@@ -349,6 +357,8 @@ navigate ((`${id}`))
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 };

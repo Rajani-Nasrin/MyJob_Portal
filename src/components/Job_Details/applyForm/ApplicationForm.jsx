@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "../../Page/Navbar";
+import Footer from "../../Page/Footer";
 
 function ApplicationForm() {
   const { state } = useLocation();
@@ -314,11 +315,11 @@ function ApplicationForm() {
 
           <div
             className="bg-white border border-gray-200
-      p-10 md:p-14"
+      p-8 md:p-14"
           >
             {/* TITLE */}
-            <div className="mb-12">
-              <h2 className="text-5xl font-bold text-gray-800">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
                 Application Form
               </h2>
 
@@ -601,7 +602,7 @@ function ApplicationForm() {
                   className="w-full mt-12
             bg-[#4CCE5B]
             text-white
-            py-5
+            py-3 md:py-5
             text-lg font-semibold
             hover:bg-[#39b54a]
             transition duration-300"
@@ -615,7 +616,7 @@ function ApplicationForm() {
                   className="w-full mt-12
             bg-[#4CCE5B]
             text-white
-            py-5
+              py-3 md:py-5
             text-lg font-semibold"
                 >
                   Go to Application List
@@ -625,6 +626,7 @@ function ApplicationForm() {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

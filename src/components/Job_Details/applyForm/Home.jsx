@@ -141,11 +141,11 @@ function Home() {
 
           {/* CONTENT */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-            <div className="max-w-4xl">
+            <div className="md:max-w-4xl max-w-6xl">
               {/* TITLE */}
 
-              <h1 className="text-6xl font-bold text-white leading-tight">
-                Get Your{" "}
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                Get Your <br className="md:hidden" />
                 <span
                   className="bg-gradient-to-r from-[#38A745] to-[#4CCE5B]
   bg-clip-text text-transparent transition-all duration-500"
@@ -156,34 +156,34 @@ function Home() {
               </h1>
 
               {/* SUBTITLE */}
-              <p className="text-white text-2xl mt-4 font-semibold">
+              <p className="text-white text-lg md:text-2xl mt-4 font-semibold">
                 Jobs, Employment & Future Career Opportunities
               </p>
               {/* TRENDING */}
               <div className="flex flex-wrap items-center gap-3 mt-4">
-                <p className="text-white text-2xl font-semibold">
+                <p className="text-white  text-lg md:text-2xl font-semibold">
                   Trending Jobs Keywords:
                 </p>
 
-                <span className="px-2 py-2 rounded-md bg-green-500/20 text-green-400 text-md">
+                <span className="px-1 py-1 md:px-2 md:py-2 rounded-md bg-green-500/20 text-green-400  text-sm md:text-md">
                   Web Designer
                 </span>
 
-                <span className="px-2 py-2 rounded-md bg-green-500/20 text-green-400 text-md">
+                <span className="px-1 py-1 md:px-2 md:py-2 rounded-md bg-green-500/20 text-green-400  text-sm md:text-md">
                   Web Developer
                 </span>
 
-                <span className="px-2 py-2 rounded-md bg-green-500/20 text-green-400 text-md">
+                <span className="px-1 py-1 md:px-2 md:py-2 rounded-md bg-green-500/20 text-green-400  text-sm md:text-md">
                   IOS Developer
                 </span>
 
-                <span className="px-2 py-2 rounded-md bg-green-500/20 text-green-400 text-md">
+                <span className="px-1 py-1 md:px-2 md:py-2 rounded-md bg-green-500/20 text-green-400  text-sm md:text-md">
                   Android Developer
                 </span>
               </div>
 
               {/* SEARCH BOX */}
-              <div className="bg-white/20 backdrop-blur-md p-5 mt-14">
+              <div className="bg-white/20 backdrop-blur-md p-2 md:p-5 mt-6 md:mt-14">
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
                   {/* JOB TITLE */}
                   <div className="bg-white px-6 py-4 border-r border-gray-200 flex items-center justify-between">
@@ -239,7 +239,7 @@ function Home() {
                       <option>Mumbai</option>
                     </select>
 
-                    <i className="fa-solid fa-location-dot text-green-500 text-3xl"></i>
+                    {/* <i className="hidden md:block fa-solid fa-location-dot text-green-500 text-3xl "></i> */}
                   </div>
 
                   {/* CATEGORY */}
@@ -297,8 +297,8 @@ function Home() {
                       });
                     }}
                     className="relative overflow-hidden
-  bg-green-500 text-white text-2xl font-semibold
-  px-12 py-4 group cursor-pointer"
+  bg-green-500 text-white text-lg md:text-2xl font-semibold
+  px-12 py-3 md:py-4 group cursor-pointer"
                   >
                     {/* HOVER BG */}
                     <span
@@ -317,17 +317,17 @@ function Home() {
           </div>
         </section>
         {/* CATEGORY SECTION */}
-        <section className="bg-gray-100 py-12">
+        <section className="bg-gray-100 py-8 md:py-12">
           <div className="max-w-7xl mx-auto px-6">
             {/* HEADING */}
             <div className="text-center mb-8">
-              <h2 className="text-5xl font-bold text-gray-800">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
                 Choose Your Desire Category
               </h2>
             </div>
 
             {/* CATEGORY GRID */}
-            <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-8">
+            <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 md:gap-8 gap-4">
               {[
                 {
                   icon: "fa-solid fa-gear",
@@ -379,7 +379,7 @@ function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-sm
+                  className="bg-white p-4 md:p-6 rounded-sm
           flex flex-col items-center justify-center
           hover:shadow-2xl hover:-translate-y-2
           transition-all duration-300 cursor-pointer group"
@@ -406,67 +406,83 @@ function Home() {
         </section>
 
         {/* RECENT JOBS */}
-        <section className=" py-12 " id="recent-jobs">
+        <section className="  py-8 md:py-12 " id="recent-jobs">
           <div className="max-w-7xl mx-auto px-6">
             {/* HEADING */}
             <div className="text-center">
-              <h2 className="text-5xl font-bold text-gray-800">Recent Jobs</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
+                Recent Jobs
+              </h2>
             </div>
 
             {/* FILTER BUTTONS */}
-            <div className="flex flex-row justify-center gap-10 mt-10 bg-gray-100 shadow-md py-8 px-4 rounded-sm max-w-4xl mx-auto">
-              {["All", "Full Time", "Part Time", "Internship"].map(
-                (item, index) => (
-                  //         <button
-                  //           key={index}
-                  //           onClick={() => setActiveTab(item)}
-                  //           className={`px-6 py-3 border-2 text-lg font-medium transition duration-300
+            <div
+              className="overflow-x-auto
+  scrollbar-hide"
+            >
+              <div
+                className="flex w-max md:w-auto
+    flex-row justify-start md:justify-center
+    gap-4 md:gap-10
+    md:mt-10 mt-6
+    bg-gray-100 shadow-md
+    py-4 md:py-8
+    px-4
+    rounded-sm
+    max-w-4xl mx-auto"
+              >
+                {["All", "Full Time", "Part Time", "Internship"].map(
+                  (item, index) => (
+                    //         <button
+                    //           key={index}
+                    //           onClick={() => setActiveTab(item)}
+                    //           className={`px-6 py-3 border-2 text-lg font-medium transition duration-300
 
-                  // ${
-                  //   activeTab === item
-                  //     ? "bg-green-500 text-white border-green-500"
-                  //     : "bg-white text-gray-700 border-green-500 hover:bg-green-500 hover:text-white"
-                  // }`}
-                  //         >
-                  //           {item}
-                  //         </button>
-                  <button
-                    key={index}
-                    onClick={() => setActiveTab(item)}
-                    className={`relative overflow-hidden px-6 py-3 border-2 text-lg font-medium group
+                    // ${
+                    //   activeTab === item
+                    //     ? "bg-green-500 text-white border-green-500"
+                    //     : "bg-white text-gray-700 border-green-500 hover:bg-green-500 hover:text-white"
+                    // }`}
+                    //         >
+                    //           {item}
+                    //         </button>
+                    <button
+                      key={index}
+                      onClick={() => setActiveTab(item)}
+                      className={`relative overflow-hidden px-3 py-2 md:px-6 md:py-3 border-2 md:text-lg text-md font-medium group
 
   ${
     activeTab === item
       ? "text-white border-green-500"
       : "text-gray-700 border-green-500"
   }`}
-                  >
-                    {/* HOVER BG */}
-                    <span
-                      className={`absolute left-0 top-0 h-full transition-all duration-500 ease-in-out
+                    >
+                      {/* HOVER BG */}
+                      <span
+                        className={`absolute left-0 top-0 h-full transition-all duration-500 ease-in-out
 
     ${
       activeTab === item
         ? "w-full bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)]"
         : "w-0 group-hover:w-full bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)]"
     }`}
-                    ></span>
+                      ></span>
 
-                    {/* TEXT */}
-                    <span
-                      className={`relative z-10 transition duration-300
+                      {/* TEXT */}
+                      <span
+                        className={`relative z-10 transition duration-300
 
     ${activeTab === item ? "text-white" : "group-hover:text-white"}`}
-                    >
-                      {item}
-                    </span>
-                  </button>
-                ),
-              )}
+                      >
+                        {item}
+                      </span>
+                    </button>
+                  ),
+                )}
+              </div>
             </div>
-
             {/* JOB GRID */}
-            <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-16">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-8 md:mt-16">
               {/* {filteredJobs.map((item, index) =>  */}
               {/* {searchedJobs.map((item, index) =>  */}
               {
@@ -500,12 +516,12 @@ function Home() {
                     return (
                       <div
                         key={id}
-                        className="bg-white border border-gray-300 p-6
+                        className="bg-white border border-gray-300 p-4 md:p-6
             flex flex-col md:flex-row md:items-center justify-between
             gap-4 hover:shadow-xl transition duration-300"
                       >
                         {/* LEFT */}
-                        <div className="flex items-center gap-6">
+                        <div className="flex flex-col md:flex-row items-center gap-6">
                           {/* IMAGE */}
                           <div
                             className="w-24 h-24 rounded-full border-4 border-gray-100
@@ -520,11 +536,11 @@ function Home() {
 
                           {/* CONTENT */}
                           <div>
-                            <h3 className="text-2xl font-semibold text-gray-800">
+                            <h3 className=" text-xl md:text-2xl font-semibold text-gray-800">
                               {job_title}
                             </h3>
 
-                            <p className="text-green-500 text-lg mt-1 font-medium">
+                            <p className="text-green-500 text-md md:text-lg mt-1 font-medium">
                               myjob.com
                             </p>
 
@@ -614,7 +630,7 @@ function Home() {
                   })
                 ) : (
                   <div className="col-span-2 text-center py-20">
-                    <h2 className="text-4xl font-bold text-gray-700">
+                    <h2 className="text-2xl md:text-4xl font-bold text-gray-700">
                       Sorry, Job Not Found 😔
                     </h2>
 
@@ -659,7 +675,7 @@ function Home() {
                     behavior: "smooth",
                   });
                 }}
-                className="relative overflow-hidden
+                className="relative overflow-hidden w-full md:w-auto inline-block
     bg-[linear-gradient(90deg,_rgb(56,167,69)_0%,_rgb(76,206,91)_63%)] text-white
     text-xl font-semibold
     px-12 py-4
@@ -682,57 +698,65 @@ function Home() {
 
         {/* Counter */}
 
-        <section ref={ref} className="bg-[#4CCE5B] py-10">
+        <section ref={ref} className="bg-[#4CCE5B] py-6 md:py-10">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-6 md:gap-12">
               {/* ITEM */}
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-white">
+                <h3 className="text-4xl md:text-6xl font-bold text-white">
                   {inView && <CountUp start={0} end={14} duration={3} />}
                   k+
                 </h3>
 
-                <p className="text-white text-xl mt-4">Active Jobs</p>
+                <p className="text-white text-md md:text-xl mt-1 md:mt-4">
+                  Active Jobs
+                </p>
               </div>
 
               {/* ITEM */}
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-white">
+                <h3 className="text-4xl md:text-6xl font-bold text-white">
                   {inView && <CountUp start={0} end={18} duration={3} />}
                   k+
                 </h3>
 
-                <p className="text-white text-xl mt-4">Total Candidates</p>
+                <p className="text-white text-md md:text-xl mt-1 md:mt-4">
+                  Total Candidates
+                </p>
               </div>
 
               {/* ITEM */}
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-white">
+                <h3 className="text-4xl md:text-6xl font-bold text-white">
                   {inView && <CountUp start={0} end={22} duration={3} />}
                   k+
                 </h3>
 
-                <p className="text-white text-xl mt-4">Registered Users</p>
+                <p className="text-white text-md md:text-xl mt-1 md:mt-4">
+                  Registered Users
+                </p>
               </div>
 
               {/* ITEM */}
               <div className="text-center">
-                <h3 className="text-6xl font-bold text-white">
+                <h3 className="text-4xl md:text-6xl font-bold text-white">
                   {inView && <CountUp start={0} end={55} duration={3} />}
                   k+
                 </h3>
 
-                <p className="text-white text-xl mt-4">Successful Hiring</p>
+                <p className="text-white text-md md:text-xl mt-1 md:mt-4">
+                  Successful Hiring
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className=" py-12">
+        <section className="py-8 md:py-12">
           <div className="max-w-7xl mx-auto px-6">
             {/* HEADING */}
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-800">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
                 Popular Companies
               </h2>
             </div>
@@ -806,7 +830,7 @@ function Home() {
               ].map((item, index) => (
                 <SwiperSlide key={index}>
                   <div
-                    className="bg-white p-6 text-center
+                    className="bg-white p-4 md:p-6 text-center
             hover:shadow-2xl transition duration-300"
                   >
                     {/* IMAGE */}
@@ -814,19 +838,19 @@ function Home() {
                       <img
                         src={item.image}
                         alt=""
-                        className="w-16 h-16 object-contain"
+                        className="w-10 h-10 md:w-16 md:h-16 object-contain"
                       />
                     </div>
 
                     {/* NAME */}
-                    <h3 className="text-2xl font-semibold text-gray-800 mt-8">
+                    <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-3 md:mt-8">
                       {item.name}
                     </h3>
 
                     {/* LOCATION */}
                     <p
                       className="flex items-center justify-center gap-2
-              text-gray-500 mt-4 text-lg"
+              text-gray-500 mt-1 md:mt-4 text-sm md:text-lg"
                     >
                       <i className="fa-solid fa-location-dot"></i>
 
@@ -860,11 +884,11 @@ function Home() {
           </div>
         </section>
 
-        <section className="bg-gray-100 py-12">
+        <section className="bg-gray-100 py-8 md:py-12">
           <div className="max-w-7xl mx-auto px-6">
             {/* HEADING */}
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-800">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
                 Our Latest Blogs
               </h2>
             </div>
@@ -909,7 +933,7 @@ function Home() {
                     <img
                       src={item.image}
                       alt=""
-                      className="w-full h-[280px] object-cover
+                      className="w-full h-[160px] md:h-[280px] object-cover
               group-hover:scale-110 transition duration-700"
                     />
 
@@ -929,10 +953,10 @@ function Home() {
                   </div>
 
                   {/* CONTENT */}
-                  <div className="p-6">
+                  <div className="p-4 md:p-6">
                     {/* TITLE */}
                     <h3
-                      className="text-2xl font-bold text-gray-800
+                      className="text-xl md:text-2xl font-bold text-gray-800
               leading-snug group-hover:text-[#4CCE5B]
               transition duration-300"
                     >
@@ -940,16 +964,16 @@ function Home() {
                     </h3>
 
                     {/* BOTTOM */}
-                    <div className="flex items-center justify-between mt-8">
+                    <div className="flex items-center justify-between mt-4 md:mt-8">
                       {/* AUTHOR */}
                       <div className="flex items-center gap-4">
                         <img
                           src="https://randomuser.me/api/portraits/women/44.jpg"
                           alt=""
-                          className="w-10 h-10 rounded-full object-cover"
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover"
                         />
 
-                        <p className="text-gray-500 text-md">Aikin Ward</p>
+                        <p className="text-gray-500 text-sm md:text-md">Aikin Ward</p>
                       </div>
 
                       {/* READ MORE */}

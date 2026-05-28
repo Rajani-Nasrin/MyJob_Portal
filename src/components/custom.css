@@ -49,3 +49,16 @@
   bottom: 0px !important;
 
 }
+
+
+
+/* MOBILE */
+@media (max-width: 425px) {
+
+  .swiper {
+
+    padding-bottom: 30px !important;
+
+  }
+
+}

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Page/Navbar";
+import Footer from "../../Page/Footer";
 
 function ApplicationList() {
   const navigate = useNavigate();
@@ -84,8 +85,7 @@ function ApplicationList() {
     );
   }
 
-  return (
-    <>
+
       {/* <Navbar /> */}
       {/* <main className="mt-20">
         <div className="container mx-auto px-4 py-12">
@@ -139,13 +139,12 @@ function ApplicationList() {
       return (
       <>
         <Navbar />
-
-        <main className="mt-20 min-h-screen bg-gray-50 py-16 ">
+        <main className="mt-20 md:min-h-screen bg-gray-50 py-8 md:py-16 ">
           <div className="max-w-7xl mx-auto px-6">
             {/* TITLE */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 md:mb-14">
               <h2
-                className="text-4xl font-bold
+                className="text-3xl md:text-4xl font-bold
             text-gray-900"
               >
                 My Job Applications
@@ -344,8 +343,9 @@ function ApplicationList() {
             )}
           </div>
         </main>
-      </>
-      );
+      
+      
+      <Footer />
     </>
   );
 }

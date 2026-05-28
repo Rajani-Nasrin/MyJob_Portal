@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Page/Navbar';
+import Footer from '../Page/Footer';
 // import LoginModal from '../LoginModal';
 
 function Details() {
@@ -685,16 +686,16 @@ const formforapplication = () => {
       </main> */}
       <main className="mt-20 bg-gray-50 min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-4 md:gap-10">
             {/* LEFT CONTENT */}
-            <div className="lg:col-span-2 bg-white p-10 border border-gray-200">
+            <div className="lg:col-span-2 bg-white p-4 md:p-10 border border-gray-200">
               {/* TITLE */}
-              <div className="mb-10">
-                <h1 className="text-5xl font-bold text-gray-800">
+              <div className="mb-5 md:mb-10">
+                <h1 className="text-3xl md:text-5xl font-bold text-gray-800">
                   {findJob.job_title}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-8 mt-6">
+                <div className="flex flex-wrap items-center gap-4 md:gap-8 mt-6">
                   <p className="flex items-center gap-3 text-gray-500 text-lg">
                     <i className="fa-solid fa-location-dot text-[#4CCE5B]"></i>
 
@@ -717,22 +718,22 @@ const formforapplication = () => {
 
               {/* DESCRIPTION */}
               <div>
-                <h2 className="text-4xl font-bold text-gray-800 mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-8">
                   Job Description
                 </h2>
 
-                <p className="text-gray-500 leading-9 text-lg">
+                <p className="text-gray-500 leading-7 md:leading-9 text-lg">
                   {findJob.job_description}
                 </p>
               </div>
 
               {/* SKILLS */}
-              <div className="mt-16">
-                <h2 className="text-4xl font-bold text-gray-800 mb-8">
+              <div className="mt-8 md:mt-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800  mb-4 md:mb-8">
                   Required Knowledge, Skills, and Abilities
                 </h2>
 
-                <div className="space-y-5">
+                <div className="space-y-3 md:space-y-5">
                   {findJob.skills.map((skill, index) => (
                     <p
                       key={index}
@@ -748,12 +749,12 @@ const formforapplication = () => {
               </div>
 
               {/* EDUCATION */}
-              <div className="mt-16">
-                <h2 className="text-4xl font-bold text-gray-800 mb-8">
+              <div className="mt-8 md:mt-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800  mb-4 md:mb-8">
                   Education Qualification
                 </h2>
 
-                <div className="space-y-5">
+                <div className="space-y-3 md:space-y-5">
                   <p className="flex items-center gap-4 text-gray-500 text-lg">
                     <i className="fa-solid fa-angle-right text-[#4CCE5B]"></i>
 
@@ -765,11 +766,11 @@ const formforapplication = () => {
               {/* BUTTON */}
               <button
                 onClick={formforapplication}
-                className="w-full mt-16
+                className="w-full mt-8 md:mt-16
           relative overflow-hidden
           bg-[#4CCE5B]
           text-white text-xl font-semibold
-          py-5 group"
+         py-3 md:py-5 group"
               >
                 <span
                   className="absolute left-0 top-0 h-full w-0
@@ -783,14 +784,14 @@ const formforapplication = () => {
             </div>
 
             {/* RIGHT SIDEBAR */}
-            <div className="space-y-8">
+            <div className="space-y-5 md:space-y-8">
               {/* OVERVIEW */}
-              <div className="bg-white border border-gray-200 p-8">
+              <div className="bg-white border border-gray-200  p-4 md:p-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">
                   Overview
                 </h2>
 
-                <div className="space-y-8">
+                <div className="space-y-5 md:space-y-8">
                   {/* SALARY */}
                   <div className="flex items-start gap-4">
                     <i className="fa-solid fa-dollar-sign text-[#4CCE5B] text-xl mt-1"></i>
@@ -844,7 +845,7 @@ const formforapplication = () => {
               </div>
 
               {/* COMPANY ADDRESS */}
-              <div className="bg-white border border-gray-200 p-8">
+              <div className="bg-white border border-gray-200  p-4 md:p-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-8">
                   Company Address
                 </h2>
@@ -853,7 +854,7 @@ const formforapplication = () => {
                   <span className="absolute left-0 top-0 w-24 h-full bg-[#4CCE5B]"></span>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-5 md:space-y-6">
                   <p className="flex items-center gap-4 text-gray-500 text-lg">
                     <i className="fa-solid fa-location-dot text-[#4CCE5B]"></i>
 
@@ -877,6 +878,8 @@ const formforapplication = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

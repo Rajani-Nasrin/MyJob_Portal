@@ -1,6 +1,6 @@
 // import React from "react";
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 // import API from "../services/api";
@@ -146,12 +146,13 @@ function RegisterApi() {
 return (
   <div
     className="min-h-screen
-    flex items-center justify-center
-    bg-gradient-to-br
-    from-[#eef2ff]
-    via-[#f8fafc]
-    to-[#edf7ff]
-    relative overflow-hidden"
+  flex flex-col items-center justify-center
+  px-4 py-4 md:py-10
+  bg-gradient-to-br
+  from-[#eef2ff]
+  via-[#f8fafc]
+  to-[#edf7ff]
+  relative overflow-x-hidden md:overflow-hidden"
   >
     {/* BG SHAPES */}
     <div
@@ -176,32 +177,34 @@ return (
     {/* REGISTER CARD */}
     <div
       className="relative
-      w-[460px]
+      md:w-[460px] h-auto
       bg-white/90
       backdrop-blur-md
       rounded-[35px]
       shadow-2xl
-      px-10 py-6"
+      px-4 md:px-10 py-4"
     >
       {/* ICON */}
       <div className="flex justify-center mb-6">
-        <div
-          className="w-20 h-20
+        <Link to="/">
+          <div
+            className="w-20 h-20
           rounded-full
           bg-[#4CCE5B]/10
           flex items-center justify-center"
-        >
-          <i
-            className="fa-solid fa-user-plus
+          >
+            <i
+              className="fa-solid fa-user-plus
             text-[#4CCE5B]
             text-3xl"
-          ></i>
-        </div>
+            ></i>
+          </div>
+        </Link>
       </div>
 
       {/* TITLE */}
       <h2
-        className="text-3xl font-bold
+        className="text-2xl md:text-3xl font-bold
         text-center text-gray-900"
       >
         Create Account
@@ -332,7 +335,7 @@ return (
       {/* DIVIDER */}
       <div
         className="flex items-center
-        gap-4 my-8"
+        gap-4 my-6"
       >
         <div className="flex-1 h-[1px] bg-gray-200"></div>
 

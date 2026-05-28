@@ -27,16 +27,18 @@ function Footer() {
       <footer className="relative bg-[#38A745] ">
         {/* FOOTER CONTENT */}
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-16">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 md:gap-16">
             {/* ABOUT */}
             <div>
               <div className="flex items-center gap-3">
-                <i className="fa-solid fa-lightbulb text-white text-4xl"></i>
+                <i className="fa-solid fa-lightbulb text-white text-3xl  md:text-4xl"></i>
 
-                <h2 className="text-3xl font-bold text-white">Myjob</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white">
+                  Myjob
+                </h2>
               </div>
 
-              <p className="text-white/90 leading-6 mt-8 text-lg">
+              <p className="text-white/90 leading-6 mt-4 md:mt-8 text-md md:text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
                 eiusmod tempor incididunt.
               </p>
@@ -63,13 +65,15 @@ function Footer() {
 
             {/* CATEGORY */}
             <div>
-              <h2 className="text-3xl font-bold text-white">Category</h2>
+              <h2 className=" text-2xl  md:text-3xl font-bold text-white">
+                Category
+              </h2>
 
               <div className="w-full h-[2px] bg-white/20 mt-5 relative">
                 <span className="absolute left-0 top-0 w-16 h-full bg-white"></span>
               </div>
 
-              <div className="mt-8 space-y-3">
+              <div className=" mt-4 md:mt-8 space-y-2 md:space-y-3">
                 {[
                   "Development",
                   "Business",
@@ -79,7 +83,7 @@ function Footer() {
                 ].map((item, index) => (
                   <p
                     key={index}
-                    className="text-white text-lg
+                    className="text-white text-md md:text-lg
               hover:translate-x-2 transition duration-300
               cursor-pointer"
                   >
@@ -119,7 +123,9 @@ function Footer() {
 
             {/* QUICK LINKS */}
             <div>
-              <h2 className="text-3xl font-bold text-white">Quick Links</h2>
+              <h2 className="text-2xl  md:text-3xl  font-bold text-white">
+                Quick Links
+              </h2>
 
               {/* LINE */}
               <div
@@ -133,7 +139,7 @@ function Footer() {
               </div>
 
               {/* LINKS */}
-              <div className="mt-8 space-y-3">
+              <div className=" mt-4 md:mt-8 space-y-2 md:space-y-3">
                 {[
                   {
                     name: "Home",
@@ -172,7 +178,7 @@ function Footer() {
                       });
                     }}
                     className="group
-        text-white text-lg
+        text-white  text-md md:text-lg
         flex items-center
         gap-3
         hover:translate-x-2
@@ -192,24 +198,26 @@ function Footer() {
 
             {/* CONTACT */}
             <div>
-              <h2 className="text-3xl font-bold text-white">Find Us</h2>
+              <h2 className="text-2xl  md:text-3xl  font-bold text-white">
+                Find Us
+              </h2>
 
               <div className="w-full h-[2px] bg-white/20 mt-5 relative">
                 <span className="absolute left-0 top-0 w-16 h-full bg-white"></span>
               </div>
 
-              <div className="mt-8 space-y-5">
-                <p className="text-white text-lg flex items-center gap-4">
+              <div className=" mt-4 md:mt-8 space-y-3 md:space-y-5">
+                <p className="text-white  text-md md:text-lg flex items-center gap-4">
                   <i className="fa-solid fa-location-dot"></i>
                   28/A Street, New York City
                 </p>
 
-                <p className="text-white text-lg flex items-center gap-4">
+                <p className="text-white  text-md md:text-lg flex items-center gap-4">
                   <i className="fa-solid fa-phone"></i>
                   +88 0123 456 789
                 </p>
 
-                <p className="text-white text-lg flex items-center gap-4">
+                <p className="text-white  text-md md:text-lg flex items-center gap-4">
                   <i className="fa-solid fa-envelope"></i>
                   example@gmail.com
                 </p>
@@ -255,22 +263,22 @@ function Footer() {
           {/* BOTTOM */}
           <div
             className="border-t border-white/20
-      mt-20 pt-5
+     mt-6 md:mt-20 pt-5
       flex md:flex-row flex-col
-      items-center justify-between gap-5"
+      items-center justify-between gap-5 py-12 md:py-0"
           >
-            <p className="text-white text-lg">
+            <p className="text-white text-md md:text-lg md:text-left text-center">
               © MyJob is Proudly Owned by HiBootstrap
             </p>
 
-            <div className="flex items-center gap-5">
-              <p className="text-white text-lg cursor-pointer">
+            <div className="flex items-center gap-0 md:gap-5 pb-20 flex-col md:flex-row">
+              <p className="text-white text-md md:text-lg cursor-pointer">
                 Terms & Conditions
               </p>
 
               <span className="text-white">-</span>
 
-              <p className="text-white text-lg cursor-pointer">
+              <p className="text-white  text-md md:text-lg cursor-pointer">
                 Privacy Policy
               </p>
             </div>

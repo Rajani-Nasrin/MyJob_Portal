@@ -1,6 +1,7 @@
 // import React from "react";
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // import API from "../services/api";
 
@@ -254,12 +255,13 @@ const handleLogin = (e) => {
   return (
     <div
       className="min-h-screen
-    flex items-center justify-center
-    bg-gradient-to-br
-    from-[#eef2ff]
-    via-[#f8fafc]
-    to-[#edf7ff]
-    relative overflow-hidden"
+  flex flex-col items-center justify-center
+  px-4 py-4 md:py-10
+  bg-gradient-to-br
+  from-[#eef2ff]
+  via-[#f8fafc]
+  to-[#edf7ff]
+  relative overflow-x-hidden md:overflow-hidden"
     >
       {/* BG SHAPES */}
       <div
@@ -280,35 +282,57 @@ const handleLogin = (e) => {
 
       <ToastContainer />
 
+      {/* <div className="mb-6">
+        <Link to="/">
+          <h1 className="text-3xl font-bold text-green-500 leading-tight  text-center">
+            MyJob
+          </h1>
+          <span className="text-sm text-gray-500 text-center">Job Portal</span>
+        </Link>
+      </div> */}
+      {/* 
+      <div
+        className="w-56 border-r border-gray-200 flex flex-col justify-center px-6 py-4 cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        <h1 className="text-3xl font-bold text-green-500 leading-tight">
+          MyJob
+        </h1>
+
+        <span className="text-sm text-gray-500">Job Portal</span>
+      </div> */}
+
       {/* LOGIN CARD */}
       <div
         className="relative
-      w-[460px]
+      md:w-[460px] h-auto
       bg-white/90
       backdrop-blur-md
       rounded-[35px]
       shadow-2xl
-      px-10 py-6"
+      px-4 md:px-10 py-4"
       >
         {/* ICON */}
         <div className="flex justify-center mb-4">
-          <div
-            className="w-20 h-20
+          <Link to="/">
+            <div
+              className="w-20 h-20
           rounded-full
           bg-[#4CCE5B]/10
           flex items-center justify-center"
-          >
-            <i
-              className="fa-solid fa-briefcase
+            >
+              <i
+                className="fa-solid fa-briefcase
             text-[#4CCE5B]
             text-3xl"
-            ></i>
-          </div>
+              ></i>
+            </div>
+          </Link>
         </div>
 
         {/* TITLE */}
         <h2
-          className="text-3xl font-bold
+          className="text-2xl md:text-3xl font-bold
         text-center text-gray-900"
         >
           Welcome Back!
@@ -435,7 +459,7 @@ const handleLogin = (e) => {
         {/* DIVIDER */}
         <div
           className="flex items-center
-        gap-4 my-8"
+        gap-4 my-6"
         >
           <div className="flex-1 h-[1px] bg-gray-200"></div>
 

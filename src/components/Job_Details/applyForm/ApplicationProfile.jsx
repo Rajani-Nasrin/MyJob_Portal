@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Page/Navbar";
+import Footer from "../../Page/Footer";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faArrowLeft,
@@ -76,225 +77,224 @@ function ApplicationProfile() {
     setDeleted(true); e
   };
 
-  return (
-    <>
+
       {/* <Navbar /> */}
       return (
-      <>
-        <Navbar />
+        <>
+          <Navbar />
 
-        <main className="mt-20 min-h-screen bg-gray-50 py-16">
-          <div className="max-w-6xl mx-auto px-6">
-            {/* BACK BUTTON */}
-            <button
-              onClick={() => navigate("/application-list")}
-              className="flex items-center gap-3
+          <main className="mt-20 min-h-screen bg-gray-50 py-8 md:py-16">
+            <div className="max-w-6xl mx-auto px-6">
+              {/* BACK BUTTON */}
+              <button
+                onClick={() => navigate("/application-list")}
+                className="flex items-center gap-3
           text-[#4CCE5B]
           font-medium
           hover:translate-x-1
           transition duration-300 mb-10"
-            >
-              <i className="fa-solid fa-arrow-left"></i>
-              Back to Application List
-            </button>
+              >
+                <i className="fa-solid fa-arrow-left"></i>
+                Back to Application List
+              </button>
 
-            {/* MAIN CARD */}
-            <div
-              className="bg-white
+              {/* MAIN CARD */}
+              <div
+                className="bg-white
           rounded-3xl
           shadow-sm
           border border-gray-200
-          p-10 md:p-14"
-            >
-              {/* TITLE */}
-              <div className="text-center mb-14">
-                <h2
-                  className="text-4xl font-bold
+          p-6 md:p-14"
+              >
+                {/* TITLE */}
+                <div className="text-center mb:8 md:mb-14">
+                  <h2
+                    className="text-3xl md:text-4xl font-bold
               text-gray-900"
-                >
-                  Application Details
-                </h2>
+                  >
+                    Application Details
+                  </h2>
 
-                <div
-                  className="w-28 h-1
+                  <div
+                    className="w-28 h-1
               bg-[#4CCE5B]
               mx-auto mt-5 rounded-full"
-                ></div>
+                  ></div>
 
-                <p className="text-gray-500 mt-5 text-lg">
-                  View your application information
-                </p>
-              </div>
+                  <p className="text-gray-500 mt-5 text-lg">
+                    View your application information
+                  </p>
+                </div>
 
-              {/* JOB INFO */}
-              <div
-                className="bg-[#4CCE5B]/5
-            rounded-2xl
-            p-8
-            flex flex-col md:flex-row
-            items-center gap-8 mb-10"
-              >
-                {/* ICON */}
+                {/* JOB INFO */}
                 <div
-                  className="w-16 h-16
+                  className="bg-[#4CCE5B]/5
+            rounded-2xl
+            md:p-8 p-4
+            flex flex-col md:flex-row
+            items-center gap-3 md:gap-8 mb-4 md:mb-10"
+                >
+                  {/* ICON */}
+                  <div
+                    className="w-16 h-16
               rounded-full
               bg-white
               flex items-center justify-center"
-                >
-                  <i
-                    className="fa-solid fa-briefcase
+                  >
+                    <i
+                      className="fa-solid fa-briefcase
                 text-3xl text-[#4CCE5B]"
-                  ></i>
+                    ></i>
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="space-y-3">
+                    <p className="text-lg text-gray-500">
+                      Job ID :
+                      <span
+                        className="text-[#4CCE5B]
+                  font-bold ml-2"
+                      >
+                        {profile.jobId}
+                      </span>
+                    </p>
+
+                    <p className="text-xl text-gray-500">
+                      Position :
+                      <span
+                        className="text-gray-900
+                  font-bold ml-2"
+                      >
+                        {profile.position}
+                      </span>
+                    </p>
+                  </div>
                 </div>
 
-                {/* CONTENT */}
-                <div className="space-y-3">
-                  <p className="text-lg text-gray-500">
-                    Job ID :
-                    <span
-                      className="text-[#4CCE5B]
-                  font-bold ml-2"
-                    >
-                      {profile.jobId}
-                    </span>
-                  </p>
+                {/* FORM FIELDS */}
+                <div
+                  className="border border-gray-200
+            rounded-2xl overflow-hidden p-4 md:p-10"
+                >
+                  {/* NAME */}
+                  <Field
+                    icon="fa-user"
+                    label="Full Name"
+                    value={profile.name}
+                    name="name"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-                  <p className="text-xl text-gray-500">
-                    Position :
-                    <span
-                      className="text-gray-900
-                  font-bold ml-2"
-                    >
-                      {profile.position}
-                    </span>
-                  </p>
-                </div>
-              </div>
+                  {/* EMAIL */}
+                  <Field
+                    icon="fa-envelope"
+                    label="Email"
+                    value={profile.email}
+                    name="email"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-              {/* FORM FIELDS */}
-              <div
-                className="border border-gray-200
-            rounded-2xl overflow-hidden p-10"
-              >
-                {/* NAME */}
-                <Field
-                  icon="fa-user"
-                  label="Full Name"
-                  value={profile.name}
-                  name="name"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
+                  {/* PHONE */}
+                  <Field
+                    icon="fa-phone"
+                    label="Contact Number"
+                    value={profile.phone}
+                    name="phone"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-                {/* EMAIL */}
-                <Field
-                  icon="fa-envelope"
-                  label="Email"
-                  value={profile.email}
-                  name="email"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
+                  {/* GENDER */}
+                  <Field
+                    icon="fa-venus-mars"
+                    label="Gender"
+                    value={profile.gender}
+                    name="gender"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-                {/* PHONE */}
-                <Field
-                  icon="fa-phone"
-                  label="Contact Number"
-                  value={profile.phone}
-                  name="phone"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
+                  {/* ADDRESS */}
+                  <Field
+                    icon="fa-location-dot"
+                    label="Address"
+                    value={profile.address}
+                    name="address"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-                {/* GENDER */}
-                <Field
-                  icon="fa-venus-mars"
-                  label="Gender"
-                  value={profile.gender}
-                  name="gender"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
+                  {/* DESCRIPTION */}
+                  <Field
+                    icon="fa-file-lines"
+                    label="Description"
+                    value={profile.description}
+                    name="description"
+                    editable={enableEdit}
+                    onChange={handleChange}
+                  />
 
-                {/* ADDRESS */}
-                <Field
-                  icon="fa-location-dot"
-                  label="Address"
-                  value={profile.address}
-                  name="address"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
+                  {/* APPLY DATE */}
+                  <Field
+                    icon="fa-calendar-days"
+                    label="Applied On"
+                    value={profile.applyDate}
+                    editable={false}
+                  />
 
-                {/* DESCRIPTION */}
-                <Field
-                  icon="fa-file-lines"
-                  label="Description"
-                  value={profile.description}
-                  name="description"
-                  editable={enableEdit}
-                  onChange={handleChange}
-                />
-
-                {/* APPLY DATE */}
-                <Field
-                  icon="fa-calendar-days"
-                  label="Applied On"
-                  value={profile.applyDate}
-                  editable={false}
-                />
-
-                {/* RESUME */}
-                {/* <Field
+                  {/* RESUME */}
+                  {/* <Field
                   icon="fa-file-arrow-down"
                   label="Uploaded CV"
                   value={profile.resumeName}
                   editable={false}
                 /> */}
-                {/* <div
+                  {/* <div
                   className="grid 
   border-b border-gray-200"
                 > */}
-                {/* ICON */}
+                  {/* ICON */}
 
-                {/* CONTENT */}
-                <div className=" ">
-                  <label
-                    className="block
+                  {/* CONTENT */}
+                  <div className=" ">
+                    <label
+                      className="block
       text-[16px] mb-4 font-medium mt-4"
-                  >
-                    <i
-                      className="fa-solid fa-file-arrow-down
+                    >
+                      <i
+                        className="fa-solid fa-file-arrow-down
          text-[#4CCE5B] mr-2"
-                    ></i>
-                    Uploaded CV
-                  </label>
+                      ></i>
+                      Uploaded CV
+                    </label>
 
-                  {!enableEdit ? (
-                    <div
-                      className="w-full pl-4 pr-4 py-3
+                    {!enableEdit ? (
+                      <div
+                        className="w-full pl-4 pr-4 py-3
         rounded-xl
         bg-white
         border border-gray-300"
-                    >
-                      {profile.resumeName}
-                    </div>
-                  ) : (
-                    <div>
-                      {/* CURRENT FILE */}
-                      <div
-                        className="w-full border border-gray-200
+                      >
+                        {profile.resumeName}
+                      </div>
+                    ) : (
+                      <div>
+                        {/* CURRENT FILE */}
+                        <div
+                          className="w-full border border-gray-200
           rounded-xl
           px-5 py-4
           text-xl text-gray-700
           bg-gray-50 mb-4"
-                      >
-                        {profile.resumeName}
-                      </div>
+                        >
+                          {profile.resumeName}
+                        </div>
 
-                      {/* NEW FILE */}
-                      <label
-                        className="inline-block
+                        {/* NEW FILE */}
+                        <label
+                          className="inline-block
           bg-[#4CCE5B]
           text-white
           px-6 py-3
@@ -302,56 +302,56 @@ function ApplicationProfile() {
           cursor-pointer
           hover:bg-[#39b54a]
           transition duration-300"
-                      >
-                        Delete & Upload New CV
-                        <input
-                          type="file"
-                          className="hidden"
-                          onChange={(e) => {
-                            const file = e.target.files[0];
+                        >
+                          Delete & Upload New CV
+                          <input
+                            type="file"
+                            className="hidden"
+                            onChange={(e) => {
+                              const file = e.target.files[0];
 
-                            if (file) {
-                              setProfile({
-                                ...profile,
+                              if (file) {
+                                setProfile({
+                                  ...profile,
 
-                                resumeName: file.name,
-                              });
-                            }
-                          }}
-                        />
-                      </label>
-                    </div>
-                  )}
+                                  resumeName: file.name,
+                                });
+                              }
+                            }}
+                          />
+                        </label>
+                      </div>
+                    )}
+                  </div>
+                  {/* </div> */}
                 </div>
-                {/* </div> */}
-              </div>
 
-              {/* CHECKBOX */}
-              <label
-                className="flex items-center gap-3
+                {/* CHECKBOX */}
+                <label
+                  className="flex items-center gap-3
             mt-10 text-lg text-gray-700  cursor-pointer"
-              >
-                <input
-                  type="checkbox"
-                  checked={enableEdit}
-                  onChange={(e) => setEnableEdit(e.target.checked)}
-                  className="w-5 h-5 accent-[#4CCE5B]"
-                />
-                Enable Edit / Delete
-              </label>
+                >
+                  <input
+                    type="checkbox"
+                    checked={enableEdit}
+                    onChange={(e) => setEnableEdit(e.target.checked)}
+                    className="w-5 h-5 accent-[#4CCE5B]"
+                  />
+                  Enable Edit / Delete
+                </label>
 
-              {/* BUTTONS */}
-              <div
-                className="grid grid-cols-1 md:grid-cols-2
+                {/* BUTTONS */}
+                <div
+                  className="grid grid-cols-1 md:grid-cols-2
             gap-6 mt-10"
-              >
-                {/* SAVE */}
-                <button
-                  onClick={handleSave}
-                  disabled={!enableEdit}
-                  className={`py-4
+                >
+                  {/* SAVE */}
+                  <button
+                    onClick={handleSave}
+                    disabled={!enableEdit}
+                    className={`md:py-4 py-3
               rounded-2xl
-              text-xl font-semibold
+               text-md md:text-xl font-semibold
               transition duration-300
               flex items-center justify-center gap-3 cursor-pointer
               ${
@@ -359,18 +359,18 @@ function ApplicationProfile() {
                   ? "bg-[#4CCE5B] text-white hover:bg-[#39b54a]"
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
               }`}
-                >
-                  <i className="fa-solid fa-pen-to-square"></i>
-                  Save Changes
-                </button>
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                    Save Changes
+                  </button>
 
-                {/* DELETE */}
-                <button
-                  onClick={handleDelete}
-                  disabled={!enableEdit}
-                  className={`py-4
+                  {/* DELETE */}
+                  <button
+                    onClick={handleDelete}
+                    disabled={!enableEdit}
+                    className={`md:py-4 py-3
               rounded-2xl
-              text-xl font-semibold
+                text-md md:text-xl  font-semibold
               transition duration-300
               flex items-center justify-center gap-3 cursor-pointer
               ${
@@ -378,15 +378,16 @@ function ApplicationProfile() {
                   ? "bg-red-500 text-white hover:bg-red-600"
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
               }`}
-                >
-                  <i className="fa-solid fa-trash"></i>
-                  Delete Application
-                </button>
+                  >
+                    <i className="fa-solid fa-trash"></i>
+                    Delete Application
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </main>
-      </>
+          </main>
+          <Footer />
+        </>
       );
       {/* <main className="mt-16">
         <div className="container mx-auto px-4 py-12">
@@ -481,8 +482,7 @@ function ApplicationProfile() {
           </div>
         </div>
       </main> */}
-    </>
-  );
+  
 }
 
 export default ApplicationProfile;
